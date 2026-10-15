@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altrix — Personal Health Copilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">✳</span><span>altrix<span class="brand-dot">.</span><small>HEALTH COPILOT</small></span></a>
+    <div class="side-label">WORKSPACE</div>
+    <button class="nav-item active" data-target="overview"><span>◫</span> Overview</button>
+    <button class="nav-item" data-target="health-story"><span>⌁</span> Health story</button>
+    <button class="nav-item" data-target="reports"><span>▤</span> My reports <span class="nav-count">3</span></button>
+    <button class="nav-item" data-target="assistant"><span>✧</span> AI assistant</button>
+    <div class="sidebar-bottom">
+      <div class="privacy-card"><span class="privacy-icon">◈</span><b>Your health, protected</b><p>Your information stays in your control. This demo uses sample data only.</p></div>
+      <div class="profile"><div class="avatar">AS</div><div><b>Alex Morgan</b><small>Personal profile</small></div><span class="profile-menu">•••</span></div>
+    </div>
+  </aside>
+
+  <main class="main" id="overview">
+    <header class="topbar"><div><p class="eyebrow">THURSDAY, OCTOBER 15</p><h1>Your health, <span>in context.</span></h1></div><div class="top-actions"><button class="icon-btn" aria-label="Notifications">♧<i></i></button><button class="help-btn" id="helpBtn">Need help? <span>↗</span></button></div></header>
+    <section class="welcome-row">
+      <div><div class="status-pill"><span class="pulse"></span> YOUR HEALTH SNAPSHOT</div><h2>Good afternoon, Alex <span>✦</span></h2><p class="muted">A clearer picture of your health starts here.</p></div>
+      <button class="primary-btn" id="uploadTop">＋ Add a report</button>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card"><div class="metric-top"><span>Heart rate</span><span class="metric-icon coral">♡</span></div><div class="metric-value">72 <small>bpm</small></div><div class="metric-foot"><span class="trend good">↘ 3 bpm</span> <span>vs. last week</span></div><svg class="sparkline" viewBox="0 0 220 44" preserveAspectRatio="none"><path d="M0 28 C18 27 20 11 38 18 S62 35 82 23 S105 26 123 15 S145 30 164 18 S195 11 220 7" /></svg></article>
+      <article class="metric-card"><div class="metric-top"><span>Sleep duration</span><span class="metric-icon violet">☾</span></div><div class="metric-value">7.4 <small>hrs</small></div><div class="metric-foot"><span class="trend good">↗ 24 min</span> <span>vs. last week</span></div><svg class="sparkline purple" viewBox="0 0 220 44" preserveAspectRatio="none"><path d="M0 31 C22 30 28 12 45 19 S67 29 85 14 S107 26 128 20 S148 10 169 17 S198 22 220 5" /></svg></article>
+      <article class="metric-card"><div class="metric-top"><span>Daily movement</span><span class="metric-icon mint">↗</span></div><div class="metric-value">6,820 <small>steps</small></div><div class="metric-foot"><span class="trend warn">68%</span> <span>of your daily goal</span></div><div class="progress-track"><span style="width:68%"></span></div></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel body-panel" id="health-story">
+        <div class="panel-heading"><div><p class="eyebrow">YOUR BODY AT A GLANCE</p><h3>Health overview</h3></div><button class="text-btn" id="bodyDetails">Explore details ↗</button></div>
+        <div class="body-content">
+          <div class="body-visual">
+            <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="body-glow"></div>
+            <svg class="human" viewBox="0 0 220 390" aria-label="Decorative human body illustration" role="img">
+              <defs><linearGradient id="skin" x1="0" x2="1"><stop stop-color="#a0f0df" stop-opacity=".45"/><stop offset=".5" stop-color="#d9fff7" stop-opacity=".78"/><stop offset="1" stop-color="#61cdbb" stop-opacity=".36"/></linearGradient></defs>
+              <circle cx="110" cy="43" r="29" fill="url(#skin)" stroke="#8be5d3" stroke-width="1.5"/>
+              <path d="M87 77 Q110 69 133 77 L151 105 L145 176 L132 194 L141 263 L157 365 L126 365 L109 245 L94 365 L63 365 L79 263 L87 194 L75 176 L69 105 Z" fill="url(#skin)" stroke="#8be5d3" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M78 98 L48 171 L34 232 L45 236 L68 181 L88 128 M142 98 L172 171 L186 232 L175 236 L152 181 L132 128" fill="none" stroke="#8be5d3" stroke-width="13" stroke-linecap="round" opacity=".7"/>
+              <path d="M110 104 C95 92 84 109 92 124 L110 143 L128 124 C136 109 125 92 110 104Z" fill="#ff8d9c" stroke="#ffd1d8" stroke-width="1.5" class="heart-shape"/>
+              <path d="M106 151 Q88 143 91 174 Q95 193 107 196 M114 151 Q132 143 129 174 Q125 193 113 196" fill="none" stroke="#7ce3d2" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="110" cy="121" r="28" fill="#ff8799" opacity=".12" class="heart-halo"/>
+            </svg>
+            <button class="organ-point heart-point" data-organ="Heart" aria-label="Heart details"><span></span></button>
+            <button class="organ-point lung-point" data-organ="Lungs" aria-label="Lung details"><span></span></button>
+            <div class="visual-caption"><span class="live-dot"></span> Interactive body map <small>Sample visualization</small></div>
+          </div>
+          <div class="organ-info"><div class="organ-tag"><span class="mini-dot"></span><span id="organTag">CARDIOVASCULAR</span></div><h4 id="organTitle">Heart health</h4><p id="organDescription">Your latest sample heart-rate reading is within a typical resting range for many adults. Trends matter more than a single reading.</p><div class="organ-stat"><span>Latest sample reading</span><b id="organReading">72 bpm</b></div><button class="outline-btn" id="organMore">Understand this reading <span>→</span></button><p class="micro-note">Illustration is educational, not a medical assessment.</p></div>
+        </div>
+      </article>
+      <article class="panel story-panel" id="reports">
+        <div class="panel-heading"><div><p class="eyebrow">CONNECT THE DOTS</p><h3>Your health story</h3></div><button class="dots-btn" aria-label="More options">•••</button></div>
+        <p class="muted small-intro">A simple timeline of your recent health activity.</p>
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-icon report-icon">▤</div><div><div class="timeline-meta">OCT 12 <span class="tag new-tag">NEW</span></div><b>Blood test report added</b><p>3 results ready to review</p><button class="inline-link" data-explain="blood">See plain-language summary →</button></div></div>
+          <div class="timeline-item"><div class="timeline-icon sleep-icon">☾</div><div><div class="timeline-meta">OCT 10</div><b>Sleep pattern updated</b><p>Average of 7.4 hours this week</p></div></div>
+          <div class="timeline-item"><div class="timeline-icon visit-icon">＋</div><div><div class="timeline-meta">OCT 03</div><b>Routine check-up</b><p>Visit note saved to your history</p></div></div>
+        </div>
+        <button class="full-link" id="timelineBtn">View full timeline <span>→</span></button>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel insight-panel"><div class="panel-heading"><div><p class="eyebrow">MADE EASIER TO UNDERSTAND</p><h3>Your latest insight</h3></div><span class="sparkle">✦</span></div><div class="insight-content"><div class="insight-graphic">✧</div><div><h4>Your report, in plain language</h4><p>Medical terms can be confusing. Ask Altrix to explain a result, define a term, or help you prepare questions for a clinician.</p><button class="primary-btn small-btn" id="explainReport">Explain my sample report <span>→</span></button></div></div><div class="disclaimer">AI explanations can be incomplete. Always confirm medical decisions with a qualified professional.</div></article>
+      <article class="panel assistant-panel" id="assistant"><div class="assistant-head"><div class="assistant-avatar">✳</div><div><h3>Ask Altrix</h3><p><span class="live-dot"></span> Your health information companion</p></div><span class="beta">DEMO</span></div><div class="chat-messages" id="chatMessages"><div class="bot-message">Hi Alex! 👋 I can help explain health terms, organize your health story, or prepare questions for your next appointment. What would you like to understand?</div></div><div class="suggestions"><button class="suggestion" data-question="Explain my blood test report">Explain my report</button><button class="suggestion" data-question="What questions should I ask my doctor?">Questions for my doctor</button></div><form class="chat-form" id="chatForm"><input id="chatInput" placeholder="Ask a health question..." autocomplete="off" aria-label="Ask a health question"/><button type="submit" aria-label="Send message">↑</button></form><p class="chat-foot">Demo assistant · Not for diagnosis or emergencies</p></article>
+    </section>
+    <footer>✳ altrix <span>Understand more. Feel more prepared.</span><a href="#overview">Back to top ↑</a></footer>
+  </main>
+
+  <div class="modal-backdrop" id="modal" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" aria-label="Close">×</button><div class="modal-icon">✳</div><p class="eyebrow">ALTRIX HEALTH COPILOT</p><h2 id="modalTitle">Add a health report</h2><p id="modalText">Upload a report to see a local demo state. This prototype does not send or analyze medical files.</p><label class="upload-zone" id="uploadZone"><span>＋</span><b>Choose a file</b><small>PDF, PNG or JPG · Demo only</small><input type="file" id="fileInput" accept=".pdf,.png,.jpg,.jpeg" hidden></label><div class="modal-actions"><button class="outline-btn" id="cancelModal">Cancel</button><button class="primary-btn" id="modalConfirm">Got it</button></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
